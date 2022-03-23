@@ -1,8 +1,9 @@
-import uvicorn
-
 if __name__ == "__main__":
     try:
-        print("Listening at port 5002")
+        import uvicorn
+        import socket
+        print("Listening at port 5002 -> IP Address ", socket.gethostbyname(socket.gethostname()))
+        
         uvicorn.run("main:app", host="0.0.0.0", workers=1, port=5002)
     except SystemExit as e:
         print('Error!', e)
