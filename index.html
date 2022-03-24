@@ -48,9 +48,10 @@
         document.body.style.cursor = "default";
       });
 
-      box.on("click", function () {
+      box.on("click touchstart", function () {
         console.log("clicked");
-        fetch("https://192.168.0.134:5002/word/hello", {
+        alert("clicked")
+        fetch("/word/hello", {
           mode: "no-cors"
         }).then((response) => {
           return response;
